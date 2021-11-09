@@ -2,7 +2,10 @@ package com.switcfully.switchtothesun.model.entity;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Getter
 @Setter
@@ -12,20 +15,12 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table
-public class Country {
+public class Continent {
 
     @Id
     private Long id;
 
     @Column
     private String name;
-
-    @OneToOne
-    @JoinColumn(name="fk_continent_id")
-    private Continent continent;
-
-    public Country(String name) {
-        this.name = name;
-    }
 
 }

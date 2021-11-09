@@ -16,11 +16,12 @@ public class SwitchtothesunApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(SwitchtothesunApplication.class, args);
-
     }
 
     @Override
     public void run(String... args) throws Exception {
         countryService.getAllCountries().forEach(country -> System.out.println(country));
+        System.out.println(countryService.getById(1L).getName());
+        System.out.println(countryService.getByName("France"));
     }
 }

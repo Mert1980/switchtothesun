@@ -18,4 +18,14 @@ public class CountryRepositoryJpa {
                .getResultList();
     }
 
+    public Country getById(Long id){
+        return entityManager.find(Country.class, id);
+    }
+
+    public Country getByName(String countryName){
+        return entityManager.createQuery("select c from Country c where c.name = :countryName", Country.class)
+                .setParameter("countryName", countryName)
+                .getSingleResult();
+    }
+
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CountryServiceImpl implements CountryService<Country, Integer, String>{
+public class CountryServiceImpl implements CountryService<Country, Long, String>{
 
     private final CountryRepositoryJpa countryRepositoryJpa;
 
@@ -21,12 +21,12 @@ public class CountryServiceImpl implements CountryService<Country, Integer, Stri
     }
 
     @Override
-    public Country getById(Integer id) {
-        return null;
+    public Country getById(Long id) {
+        return countryRepositoryJpa.getById(id);
     }
 
     @Override
     public Country getByName(String name) {
-        return null;
+        return countryRepositoryJpa.getByName(name);
     }
 }
